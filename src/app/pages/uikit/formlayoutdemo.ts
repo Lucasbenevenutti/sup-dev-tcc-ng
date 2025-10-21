@@ -87,10 +87,10 @@ import { TextareaModule } from 'primeng/textarea';
 
         <div class="flex mt-8">
             <div class="card flex flex-col gap-6 w-full">
-                <div class="font-semibold text-xl">Advanced</div>
+                <div class="font-semibold text-xl">Dados para agendar</div>
                 <div class="flex flex-col md:flex-row gap-6">
                     <div class="flex flex-wrap gap-2 w-full">
-                        <label for="firstname2">Firstname</label>
+                        <label for="firstname2">Primeiro nome</label>
                         <input pInputText id="firstname2" type="text" />
                     </div>
                     <div class="flex flex-wrap gap-2 w-full">
@@ -120,9 +120,10 @@ import { TextareaModule } from 'primeng/textarea';
 })
 export class FormLayoutDemo {
     dropdownItems = [
-        { name: 'Option 1', code: 'Option 1' },
-        { name: 'Option 2', code: 'Option 2' },
-        { name: 'Option 3', code: 'Option 3' }
+        { name: 'Cabelo', code: 'Option 1' },
+        { name: 'Unha Mão', code: 'Option 2' },
+        { name: 'Unha Pé', code: 'Option 3' },
+        { name: 'Sobrancelha', code: 'Option 3' },
     ];
 
     dropdownItem = null;
