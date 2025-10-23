@@ -117,8 +117,12 @@ export class AppConfigurator {
 
     ngOnInit() {
         if (isPlatformBrowser(this.platformId)) {
+            this.enableDarkMode();
             this.onPresetChange(this.layoutService.layoutConfig().preset);
         }
+    }
+    enableDarkMode() {
+        throw new Error('Method not implemented.');
     }
 
     surfaces: SurfacesType[] = [

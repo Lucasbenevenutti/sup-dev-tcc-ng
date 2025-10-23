@@ -27,7 +27,8 @@ export class AppMenu {
             {
                 label: 'UI Components',
                 items: [
-                    { label: 'Agendar', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
+                    { label: 'Forms', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
+                    { label: 'Agenda', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/agenda'] },
                     { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] },
                     { label: 'Button', icon: 'pi pi-fw pi-mobile', class: 'rotated-icon', routerLink: ['/uikit/button'] },
                     { label: 'Table', icon: 'pi pi-fw pi-table', routerLink: ['/uikit/table'] },
