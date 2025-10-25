@@ -15,6 +15,7 @@ import { OverlayDemo } from './overlaydemo';
 import { TreeDemo } from './treedemo';
 import { MenuDemo } from './menudemo';
 import { AgendaList } from './agenda';
+import { Atendimentos } from './atendimentos';
 
 export default [
     { path: 'button', data: { breadcrumb: 'Button' }, component: ButtonDemo },
@@ -33,5 +34,6 @@ export default [
     { path: 'tree', data: { breadcrumb: 'Tree' }, component: TreeDemo },
     { path: 'menu', data: { breadcrumb: 'Menu' }, component: MenuDemo },
     { path: 'agenda', data: { breadcrumb: 'Agenda' }, component: AgendaList },
+    { path: 'atendimentos', data: { breadcrumb: 'Atendimentos' }, component: Atendimentos },
     { path: '**', redirectTo: '/notfound' }
 ] as Routes;
