@@ -56,38 +56,79 @@ export interface Cliente {
                   @for (servico of cliente.servicos; track servico) {
                     <span> {{servico}}</span>
                     }
-                  </div>
+                </div>
                     
-                    <ng-template #footer>
-                      <div class="flex gap-4">
-                        <p-button label="Cancel" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
-                        <p-button label="Save" class="w-full" styleClass="w-full" />
-                      </div>
-                    </ng-template>
-                  </p-card>
-                }
+                <ng-template #footer>
+                  <div class="flex gap-4">
+                    <p-button label="Cancel" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
+                    <p-button label="Save" class="w-full" styleClass="w-full" />
+                  </div>
+                </ng-template>
+              </p-card>
+          }
         </div>
           </p-accordion-content>
         </p-accordion-panel>
         
         <p-accordion-panel value="1">
-          <p-accordion-header>Header II</p-accordion-header>
+          <p-accordion-header><h4>Mariana</h4></p-accordion-header>
           <p-accordion-content>
-            <p class="m-0">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-              aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo
-              enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos
-              qui ratione voluptatem sequi nesciunt. Consectetur, adipisci velit, sed quia non numquam eius modi.
-            </p>
+            <div class="flex flex-wrap gap-4">
+          @for(cliente of clientes; track cliente) {
+              <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+                   
+                <ng-template #header></ng-template>
+                
+                <ng-template #title>Cliente: {{cliente.nome}}</ng-template>
+                
+                <ng-template #subtitle>{{cliente.horario}}</ng-template>
+                
+                <div class="flex flex-col gap-1">
+                  @for (servico of cliente.servicos; track servico) {
+                    <span> {{servico}}</span>
+                    }
+                </div>
+                    
+                <ng-template #footer>
+                  <div class="flex gap-4">
+                    <p-button label="Cancel" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
+                    <p-button label="Save" class="w-full" styleClass="w-full" />
+                  </div>
+                </ng-template>
+              </p-card>
+          }
+        </div>
           </p-accordion-content>
         </p-accordion-panel>
         
         <p-accordion-panel value="2">
-          <p-accordion-header>Header III</p-accordion-header>
+          <p-accordion-header><h4>Jessica</h4></p-accordion-header>
           <p-accordion-content>
-            <p class="m-0">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
-            </p>
+            <div class="flex flex-wrap gap-4">
+          @for(cliente of clientes; track cliente) {
+              <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
+                   
+                <ng-template #header></ng-template>
+                
+                <ng-template #title>Cliente: {{cliente.nome}}</ng-template>
+                
+                <ng-template #subtitle>{{cliente.horario}}</ng-template>
+                
+                <div class="flex flex-col gap-1">
+                  @for (servico of cliente.servicos; track servico) {
+                    <span> {{servico}}</span>
+                    }
+                </div>
+                    
+                <ng-template #footer>
+                  <div class="flex gap-4">
+                    <p-button label="Cancel" severity="secondary" class="w-full" [outlined]="true" styleClass="w-full" />
+                    <p-button label="Save" class="w-full" styleClass="w-full" />
+                  </div>
+                </ng-template>
+              </p-card>
+          }
+        </div>
           </p-accordion-content>
         </p-accordion-panel>
       </p-accordion>

@@ -16,7 +16,7 @@ export interface Cliente {
   selector: 'app-atendimentofuncionario',
   imports: [CardModule, ButtonModule, FormsModule, DatePicker],
   template: `
-<div class="card flex flex-col gap-8 w-full">
+<div class="card flex flex-col gap-6 w-full">
   <div class="flex justify-between items-center">
     <h2 class="font-semibold text-xl">Lista de atendimentos</h2>
 
