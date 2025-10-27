@@ -37,10 +37,10 @@ export interface Cliente {
   </div>
    
   
-  <div class="card flex justify-center">
+  <div class="gap-6 justify-center">
     <p-accordion value="0">
       <p-accordion-panel value="0">
-        <p-accordion-header><h4>Angelica</h4></p-accordion-header>
+        <p-accordion-header><h4 class="font-semibold text-xl">Angelica</h4></p-accordion-header>
         <p-accordion-content>
         <div class="flex flex-wrap gap-4">
           @for(cliente of clientes; track cliente) {
@@ -71,7 +71,7 @@ export interface Cliente {
         </p-accordion-panel>
         
         <p-accordion-panel value="1">
-          <p-accordion-header><h4>Mariana</h4></p-accordion-header>
+          <p-accordion-header><h4 class="font-semibold text-xl">Mariana</h4></p-accordion-header>
           <p-accordion-content>
             <div class="flex flex-wrap gap-4">
           @for(cliente of clientes; track cliente) {
@@ -102,7 +102,7 @@ export interface Cliente {
         </p-accordion-panel>
         
         <p-accordion-panel value="2">
-          <p-accordion-header><h4>Jessica</h4></p-accordion-header>
+          <p-accordion-header><h4 class="font-semibold text-xl">Jessica</h4></p-accordion-header>
           <p-accordion-content>
             <div class="flex flex-wrap gap-4">
           @for(cliente of clientes; track cliente) {

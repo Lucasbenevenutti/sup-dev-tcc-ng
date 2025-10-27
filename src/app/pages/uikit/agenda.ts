@@ -12,13 +12,18 @@ import { Dialog } from 'primeng/dialog';
 import { Router, RouterModule } from '@angular/router';
 
 interface Servicos {
-    name: string,
-    code: string
+    name: string;
+    code: string;
 }
 
 interface Cliente {
     name: string;
     code: string;
+}
+
+interface Profissional {
+  name: string;
+  code: string;
 }
 
 @Component({
@@ -65,6 +70,19 @@ interface Cliente {
       fluid="" 
       />
     </div>
+
+    <div class="flex flex-wrap gap-2 w-full">
+      <label>Profissional</label>
+      <p-select 
+      [options]="profissionais" 
+      [(ngModel)]="profisinalSelecionado" 
+      variant="filled" optionLabel="name" 
+      placeholder="Selecione o profissional" 
+      class="w-full md:w-56" 
+      fluid=""
+      />
+    </div>
+
   </div>
     
   <div class="flex flex-col md:flex-row items-end w-full gap-2 md:gap-3">
@@ -125,6 +143,9 @@ export class AgendaList {
 
   clientes: Cliente[] | undefined;
   clienteSelecionado: Cliente | undefined;
+
+  profissionais: Profissional[] | undefined;
+  profisinalSelecionado: Profissional | undefined;
 
   observacao!: string;
   
@@ -194,7 +215,8 @@ export class AgendaList {
                 ]
             }
         ];
-  }
+    };
+  
 
 
   ngOnInit() {
@@ -205,6 +227,12 @@ export class AgendaList {
       { name: 'Patricia whichroski', code: 'LDN' },
       { name: 'Yasmin Benevenutti', code: 'IST' },
       { name: 'Raissa Benevenutti', code: 'PRS' }
+    ];
+    
+    this.profissionais = [
+            { name: 'Angelica', code: 'An' },
+            { name: 'Mariana', code: 'MA' },
+            { name: 'Jessica', code: 'JE' }
     ];
 
     let today = new Date();

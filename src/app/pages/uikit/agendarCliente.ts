@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { DatePicker, DatePickerModule } from 'primeng/datepicker';
-import { InputGroup, InputGroupModule } from 'primeng/inputgroup';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectModule } from 'primeng/select';
 import { SelectItemGroup } from 'primeng/api';
@@ -16,7 +15,7 @@ interface Servicos {
 
 @Component({
   selector: 'app-agendar-cliente',
-  imports: [ButtonModule, SelectModule, FormsModule, TextareaModule, MultiSelectModule, DatePicker, InputGroup, RouterModule ],
+  imports: [ButtonModule, SelectModule, FormsModule, TextareaModule, MultiSelectModule, DatePicker, RouterModule ],
   template: `
 <div class="card flex flex-col gap-6 w-full">
   <div class="font-semibold text-xl">Insira os dados para agendar</div>

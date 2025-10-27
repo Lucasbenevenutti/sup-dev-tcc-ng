@@ -34,7 +34,7 @@ export interface Cliente {
     </div>
   </div>
 
-  <h4>Angelica</h4>
+  <h4 >Angelica</h4>
 
   <div class="flex flex-wrap gap-4">
       @for(cliente of clientes; track cliente) {
