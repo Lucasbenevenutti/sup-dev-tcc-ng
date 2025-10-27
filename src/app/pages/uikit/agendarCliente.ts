@@ -1,56 +1,25 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { DatePicker } from 'primeng/datepicker';
-import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { DatePicker, DatePickerModule } from 'primeng/datepicker';
+import { InputGroup, InputGroupModule } from 'primeng/inputgroup';
 import { MultiSelectModule } from 'primeng/multiselect';
 import { SelectModule } from 'primeng/select';
-import { TextareaModule } from 'primeng/textarea';
 import { SelectItemGroup } from 'primeng/api';
-import { ButtonModule } from 'primeng/button';
-import { InputGroup } from 'primeng/inputgroup';
-import { Dialog } from 'primeng/dialog';
-import { Router, RouterModule } from '@angular/router';
+import { TextareaModule } from 'primeng/textarea';
+import { RouterModule } from '@angular/router';
 
 interface Servicos {
     name: string,
     code: string
 }
 
-interface Cliente {
-    name: string;
-    code: string;
-}
-
 @Component({
-  selector: 'app-list',
-  imports: [InputTextModule, SelectModule, FormsModule, TextareaModule, MultiSelectModule, DatePicker, ButtonModule, InputGroup, Dialog, RouterModule],
+  selector: 'app-agendar-cliente',
+  imports: [ButtonModule, SelectModule, FormsModule, TextareaModule, MultiSelectModule, DatePicker, InputGroup, RouterModule ],
   template: `
-
 <div class="card flex flex-col gap-6 w-full">
-  <div class="font-semibold text-xl">Agendar Cliente</div>
-
-  <div class="flex flex-wrap gap-2 w-full ">
-    <label for="nome">Cliente</label>
-      <p-inputgroup>
-        <p-button (click)="showDialog()" label="Adicionar Cliente" class="remover-borda"/>
-        <p-dialog header="Dados Cliente" [modal]="true" [(visible)]="visible" [style]="{ width: '25rem' }">
-          <span class="p-text-secondary block mb-8">Por favor insira os dados</span>
-          <div class="flex items-center gap-4 mb-4">
-              <label for="nome" class="font-semibold w-24">Nome</label>
-              <input pInputText id="nome" class="flex-auto" autocomplete="off" />
-          </div>
-          <div class="flex items-center gap-4 mb-8">
-              <label for="sobrenome" class="font-semibold w-24">Sobrenome</label>
-              <input pInputText id="sobrenome" class="flex-auto" autocomplete="off" />
-          </div>
-          <div class="flex justify-end gap-2">
-              <p-button label="Cancelar" severity="secondary" (click)="visible = false" />
-              <p-button label="Cadastrar" (click)="visible = false" />
-          </div>
-        </p-dialog>
-        <p-select [options]="clientes" [(ngModel)]="clienteSelecionado" [filter]="true" filterBy="name" optionLabel="name" placeholder="Selecione o cliente" class="w-full md:w-56" />
-    </p-inputgroup>
-  </div>
+  <div class="font-semibold text-xl">Insira os dados para agendar</div>
 
   <div class="flex flex-col md:flex-row gap-">
     <div class="flex flex-wrap gap-2 w-full">
@@ -66,7 +35,7 @@ interface Cliente {
       />
     </div>
   </div>
-    
+
   <div class="flex flex-col md:flex-row items-end w-full gap-2 md:gap-3">
     <div class="flex flex-col gap-1 flex-1">
       <label for="data">Data</label>
@@ -108,26 +77,24 @@ interface Cliente {
   <div class="card flex justify-center">
     <p-button label="Agendar" icon="pi pi-check" size="large" routerLink="/uikit/atendimentos"/>
   </div>
-
-
 </div>
-
-
   `,
-  styles: `
-  .remover-borda{
-    border-top-right-radius: 0px ;
-    border-bottom-right-radius: 0px;
-  }
-  `
+  styles: ``
 })
-export class AgendaList {
+export class AgendarCliente {
 
-  clientes: Cliente[] | undefined;
-  clienteSelecionado: Cliente | undefined;
+  servicos!: Servicos[];
+  servicosSelecionado!: Servicos[];
+
+  date: Date | undefined;
+  minDate: Date | undefined;
+  maxDate: Date | undefined;
 
   observacao!: string;
-  
+
+  hora: SelectItemGroup[];
+  horarios: string | undefined;
+
   dropdownItems = [
         { name: 'Cabelo', code: 'Option 1' },
         { name: 'Unha Mão', code: 'Option 2' },
@@ -135,26 +102,9 @@ export class AgendaList {
         { name: 'Sobrancelha', code: 'Option 3' },
   ];
 
-  visible: boolean = false;
-  showDialog() {
-        this.visible = true;
-    }
-
   dropdownItem = null;
 
-  servicos!: Servicos[];
-  servicosSelecionado!: Servicos[];
-  
-  date: Date | undefined;
-  minDate: Date | undefined;
-  maxDate: Date | undefined;
-
-  hora: SelectItemGroup[];
-  horarios: string | undefined;
-
-  constructor(
-    private router: Router
-  ) {
+  constructor() {
     this.servicos = [
       {name: 'Cabelo', code: 'NY'},
       {name: 'Unha Mão', code: 'RM'},
@@ -195,18 +145,9 @@ export class AgendaList {
             }
         ];
   }
-
+  
 
   ngOnInit() {
-
-    this.clientes = [
-      { name: 'Brenda Crespi', code: 'NY' },
-      { name: 'Ana Paula', code: 'RM' },
-      { name: 'Patricia whichroski', code: 'LDN' },
-      { name: 'Yasmin Benevenutti', code: 'IST' },
-      { name: 'Raissa Benevenutti', code: 'PRS' }
-    ];
-
     let today = new Date();
     let month = today.getMonth();
     let year = today.getFullYear();
@@ -221,5 +162,4 @@ export class AgendaList {
     this.maxDate.setMonth(nextMonth);
     this.maxDate.setFullYear(nextYear);
     }
-    
 }
