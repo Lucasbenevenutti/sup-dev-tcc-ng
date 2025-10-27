@@ -1,0 +1,3 @@
+ng g c create --skip-tests --inline-style --inline-template --flat
+ng g c edit --skip-tests --inline-style --inline-template --flat
+ng g c list --skip-tests --inline-style --inline-template --flat

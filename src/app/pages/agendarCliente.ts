@@ -13,9 +13,14 @@ interface Servicos {
     code: string
 }
 
+interface Profissional {
+  name: string;
+  code: string;
+}
+
 @Component({
   selector: 'app-agendar-cliente',
-  imports: [ButtonModule, SelectModule, FormsModule, TextareaModule, MultiSelectModule, DatePicker, RouterModule ],
+  imports: [ButtonModule, SelectModule, FormsModule, TextareaModule, MultiSelectModule, DatePicker, RouterModule],
   template: `
 <div class="card flex flex-col gap-6 w-full">
   <div class="font-semibold text-xl">Insira os dados para agendar</div>
@@ -31,6 +36,17 @@ interface Servicos {
       display="chip" 
       class="w-full md:w-80" 
       fluid="" 
+      />
+    </div>
+    <div class="flex flex-wrap gap-2 w-full">
+      <label>Profissional</label>
+      <p-select 
+      [options]="profissionais" 
+      [(ngModel)]="profisinalSelecionado" 
+      variant="filled" optionLabel="name" 
+      placeholder="Selecione o profissional" 
+      class="w-full md:w-56" 
+      fluid=""
       />
     </div>
   </div>
@@ -74,7 +90,7 @@ interface Servicos {
   </div>
 
   <div class="card flex justify-center">
-    <p-button label="Agendar" icon="pi pi-check" size="large" routerLink="/uikit/atendimentos"/>
+    <p-button label="Agendar" icon="pi pi-check" size="large"/>
   </div>
 </div>
   `,
@@ -93,6 +109,9 @@ export class AgendarCliente {
 
   hora: SelectItemGroup[];
   horarios: string | undefined;
+
+  profissionais: Profissional[] | undefined;
+  profisinalSelecionado: Profissional | undefined;
 
   dropdownItems = [
         { name: 'Cabelo', code: 'Option 1' },
@@ -147,6 +166,12 @@ export class AgendarCliente {
   
 
   ngOnInit() {
+    this.profissionais = [
+            { name: 'Angelica', code: 'An' },
+            { name: 'Mariana', code: 'MA' },
+            { name: 'Jessica', code: 'JE' }
+    ];
+
     let today = new Date();
     let month = today.getMonth();
     let year = today.getFullYear();
