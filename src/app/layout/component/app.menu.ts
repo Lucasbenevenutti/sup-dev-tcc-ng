@@ -29,6 +29,7 @@ export class AppMenu {
                 items: [
                     { label: 'Forms', icon: 'pi pi-fw pi-id-card', routerLink: ['/uikit/formlayout'] },
                     { label: 'Agenda', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/agenda'] },
+                    { label: 'Atendimento Funcionario', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/atendimentoFuncionario'] },
                     { label: 'Atendimentos', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/atendimentos'] },
                     { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] },
                     { label: 'Button', icon: 'pi pi-fw pi-mobile', class: 'rotated-icon', routerLink: ['/uikit/button'] },

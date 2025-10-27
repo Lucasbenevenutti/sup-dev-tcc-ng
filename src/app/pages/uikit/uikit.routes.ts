@@ -16,6 +16,7 @@ import { TreeDemo } from './treedemo';
 import { MenuDemo } from './menudemo';
 import { AgendaList } from './agenda';
 import { Atendimentos } from './atendimentos';
+import { Atendimentofuncionario } from './atendimentoFuncionario';
 
 export default [
     { path: 'button', data: { breadcrumb: 'Button' }, component: ButtonDemo },
@@ -35,5 +36,6 @@ export default [
     { path: 'menu', data: { breadcrumb: 'Menu' }, component: MenuDemo },
     { path: 'agenda', data: { breadcrumb: 'Agenda' }, component: AgendaList },
     { path: 'atendimentos', data: { breadcrumb: 'Atendimentos' }, component: Atendimentos },
+    { path: 'atendimentoFuncionario', data: { breadcrumb: 'Atendimento Funcionario' }, component: Atendimentofuncionario  },
     { path: '**', redirectTo: '/notfound' }
 ] as Routes;

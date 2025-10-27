@@ -42,7 +42,7 @@ export interface Cliente {
       <p-accordion-panel value="0">
         <p-accordion-header><h4>Angelica</h4></p-accordion-header>
         <p-accordion-content>
-          <div class="flex flex-wrap gap-4">
+        <div class="flex flex-wrap gap-4">
           @for(cliente of clientes; track cliente) {
               <p-card [style]="{ width: '25rem', overflow: 'hidden' }">
                    

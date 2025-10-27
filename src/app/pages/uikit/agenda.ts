@@ -200,7 +200,7 @@ export class AgendaList {
   ngOnInit() {
 
     this.clientes = [
-      { name: 'Brenda Reis', code: 'NY' },
+      { name: 'Brenda Crespi', code: 'NY' },
       { name: 'Ana Paula', code: 'RM' },
       { name: 'Patricia whichroski', code: 'LDN' },
       { name: 'Yasmin Benevenutti', code: 'IST' },
