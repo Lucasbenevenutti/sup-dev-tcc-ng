@@ -18,7 +18,7 @@ export interface Cliente {
   template: `
 <div class="card flex flex-col gap-6 w-full">
   <div class="flex justify-between items-center">
-    <h2 class="font-semibold text-xl">Lista de atendimentos</h2>
+    <h1 class="font-semibold text-xl">Lista de atendimentos</h1>
 
     <div class="flex items-center gap-2 pr-25">
       <h2 for="data" class="whitespace-nowrap">Data</h2>
@@ -34,7 +34,7 @@ export interface Cliente {
     </div>
   </div>
 
-  <h4 >Angelica</h4>
+  <h4 class="font-semibold text-xl">Angelica</h4>
 
   <div class="flex flex-wrap gap-4">
       @for(cliente of clientes; track cliente) {
